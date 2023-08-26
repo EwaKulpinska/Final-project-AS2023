@@ -7,6 +7,7 @@ import img6 from "./gallery/img_6.jpg";
 import img7 from "./gallery/img_7.jpg";
 import img8 from "./gallery/img_8.jpg";
 import img9 from "./gallery/img_9.jpg";
+import img10 from "./gallery/img_10.jpg";
 
 import imgChef1 from "./top-chiefs/img_1.jpg";
 import imgChef2 from "./top-chiefs/img_2.jpg";
@@ -35,3 +36,5 @@ export const chefImages = [
   imgChef5,
   imgChef6,
 ];
+
+export default img10;
