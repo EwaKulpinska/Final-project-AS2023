@@ -1,18 +1,7 @@
 import CustomImage from "./CustomImage";
+import { dishImages } from "../img/images";
 
 export default function HeroSection() {
-  const images = [
-    "/img/gallery/img_1.jpg",
-    "/img/gallery/img_2.jpg",
-    "/img/gallery/img_3.jpg",
-    "/img/gallery/img_4.jpg",
-    "/img/gallery/img_5.jpg",
-    "/img/gallery/img_6.jpg",
-    "/img/gallery/img_7.jpg",
-    "/img/gallery/img_8.jpg",
-    "/img/gallery/img_9.jpg",
-  ];
-
   return (
     <div className="section hero">
       <div className="col typography">
@@ -25,7 +14,7 @@ export default function HeroSection() {
         <button className="btn">explore now</button>
       </div>
       <div className="col gallery">
-        {images.map((src, index) => (
+        {dishImages.map((src, index) => (
           <CustomImage key={index} imgSrc={src} pt={"90%"} />
         ))}
       </div>
