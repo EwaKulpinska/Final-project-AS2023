@@ -28,13 +28,7 @@ export const dishImages = [
   img9,
 ];
 
-export const chefImages = [
-  imgChef1,
-  imgChef2,
-  imgChef3,
-  imgChef4,
-  imgChef5,
-  imgChef6,
-];
+const chefImages = [imgChef1, imgChef2, imgChef3, imgChef4, imgChef5, imgChef6];
 
-export default img10;
+export { img10 };
+export { chefImages };

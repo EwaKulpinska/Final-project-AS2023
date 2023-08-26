@@ -88,23 +88,27 @@ img {
 
 @import "partials/hero-section";
 @import "partials/improve-section";
+@import "partials/quote-section";
+@import "partials/chefs-section";
 
-.section.quote {
-  display: block;
-  .quote-text {
-    font-size: 1.3em;
-    line-height: 1.2;
-    color: var(--text-color);
-    svg {
-      color: var(--primary-color);
-      font-size: 1.5em;
-      margin-right: 0.5em;
+.footer {
+  background-color: #0f0f0f;
+  color: #fff;
+  padding-block: 3em;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-gap: 1em;
+  .footer-section {
+    p {
+      opacity: 0.9;
+      margin-bottom: 0.5;
     }
-  }
-  .quote-author {
-    color: var(--text-light);
-    text-align: right;
-    margin-top: 1em;
+    p.title {
+      opacity: 1;
+      font-weight: bold;
+      font-size: 1.1;
+      margin-bottom: 1em;
+    }
   }
 }
 
@@ -126,5 +130,8 @@ img {
     .sidebar-btn {
       display: block;
     }
+  }
+  .chef-card {
+    box-shadow: 0 5px 10px var(--shadow-color);
   }
 }

@@ -1,4 +1,4 @@
-import img10 from "../img/images";
+import { img10 } from "../img/images";
 
 export default function ImproveSkills() {
   const list = [
