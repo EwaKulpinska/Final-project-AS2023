@@ -9,7 +9,7 @@ export default function Navbar() {
   const location = useLocation();
 
   const [showSidebar, setShowSitebar] = useState(false);
-  const [showSettings, setShowSettings] = useState(true);
+  const [showSettings, setShowSettings] = useState(false);
   const links = [
     {
       name: "Home",

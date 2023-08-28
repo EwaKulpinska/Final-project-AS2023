@@ -61,10 +61,39 @@ img {
   .drop-down {
     position: absolute;
     display: inline-block;
-    margin-top: 1em;
-    left: -140%;
+    top: 1vh;
+    left: -3.4vw;
     height: 2em;
     width: 16.5em;
+  }
+}
+.settings-btn-sidebar {
+  padding: 0.5em 1em;
+  border-left: 0.4em solid transparent;
+  margin-bottom: 1em;
+  color: var(--text-color);
+  font-size: 1.1em;
+  position: relative;
+  .drop-down {
+    position: absolute;
+    display: inline-block;
+    top: 1vh;
+    left: -1vw;
+    height: 2em;
+    width: 14em;
+    .option {
+      min-height: 1.5em;
+      min-width: 1.5em;
+      box-shadow: 0 3px 6px var(--shadow-color);
+      border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &:hover {
+        border-radius: 50%;
+        box-shadow: 0 10px 10px var(--shadow-color);
+      }
+    }
   }
 }
 
@@ -172,6 +201,9 @@ img {
 @media screen and (max-width: 768px) {
   .navbar {
     .nav-links {
+      display: none;
+    }
+    .settings-btn {
       display: none;
     }
     .sidebar-btn {
