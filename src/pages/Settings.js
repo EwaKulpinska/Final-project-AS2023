@@ -4,16 +4,7 @@ import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import { useState, useEffect } from "react";
 
 export default function Settings() {
-  const [settings, setSettings] = useState({
-    "--background-color": "#fff",
-    "--background-light": "#fff",
-    "--primary-color": "rgb(255, 0, 86)",
-    "--shadow-color": "rgba(0,0,0,0.2)",
-    "--text-color": "#0A0A0A",
-    "--text-light": "#575757",
-    "--font-size": "16px",
-    "--animation-speed": 1,
-  });
+  const [settings, setSettings] = useState();
 
   useEffect(() => {
     const root = document.documentElement;
@@ -22,42 +13,13 @@ export default function Settings() {
     }
   }, [settings]);
 
-  const [theme, setTheme] = useState("light");
-
-  const themes = [
-    {
-      "--background-color": "#fff",
-      "--background-light": "#fff",
-      "--shadow-color": "rgba(0,0,0,0.2)",
-      "--text-color": "#0A0A0A",
-      "--text-light": "#575757",
-    },
-    {
-      "--background-color": "rgb(29, 29, 29)",
-      "--background-light": "rgb(77, 77, 77)",
-      "--shadow-color": "rgba(0,0,0,0.2)",
-      "--text-color": "#ffffff",
-      "--text-light": "#eceaea",
-    },
-  ];
-
-  function changeTheme(i) {
-    const _theme = { ...themes[i] };
-    setTheme(i === 0 ? "light" : "dark");
-    //update settings
-    let _settings = { ...settings };
-    for (let key in _theme) {
-      _settings[key] = _theme[key];
-    }
-    setSettings(_settings);
-  }
-
   function changeColor(i) {
     const _color = primaryColors[i];
     let _settings = { ...settings };
     _settings["--primary-color"] = _color;
     setPrimaryColor(i);
     setSettings(_settings);
+    localStorage.setItem("color", _settings["--primary-color"]);
   }
 
   function changeFontSize(i) {
@@ -66,6 +28,7 @@ export default function Settings() {
     _settings["--font-size"] = _size.value;
     setFontSize(i);
     setSettings(_settings);
+    localStorage.setItem("font", _settings["--font-size"]);
   }
 
   function changeAnimationSpeed(i) {
@@ -74,6 +37,7 @@ export default function Settings() {
     _settings["--animation-speed"] = _speed.value;
     setAnimationSpeed(i);
     setSettings(_settings);
+    localStorage.setItem("speed", _settings["--animation-speed"]);
   }
 
   const primaryColors = [
@@ -119,25 +83,6 @@ export default function Settings() {
 
   return (
     <div>
-      <div className="section disp-block">
-        <h2>Primary theme</h2>
-        <div className="options-container">
-          <div className="option light" onClick={() => changeTheme(0)}>
-            {theme === "light" && (
-              <div className="check">
-                <FontAwesomeIcon icon={faCheck} />
-              </div>
-            )}
-          </div>
-          <div className="option dark" onClick={() => changeTheme(1)}>
-            {theme === "dark" && (
-              <div className="check">
-                <FontAwesomeIcon icon={faCheck} />
-              </div>
-            )}
-          </div>
-        </div>
-      </div>
       <div className="section disp-block">
         <h2>Preferred color</h2>
         <div className="options-container">
