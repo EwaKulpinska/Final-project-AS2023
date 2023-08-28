@@ -1,13 +1,15 @@
 import { Link, useLocation } from "react-router-dom";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import Sidebar from "./Sidebar";
+import Settings from "./Settings";
 import { faHome, faList, faCog } from "@fortawesome/free-solid-svg-icons";
 
 export default function Navbar() {
   const location = useLocation();
 
   const [showSidebar, setShowSitebar] = useState(false);
+  const [showSettings, setShowSettings] = useState(true);
   const links = [
     {
       name: "Home",
@@ -19,11 +21,6 @@ export default function Navbar() {
       path: "/recipes",
       icon: faList,
     },
-    {
-      name: "Settings",
-      path: "/settings",
-      icon: faCog,
-    },
   ];
 
   function closeSidebar() {
@@ -32,10 +29,11 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="navbar container">
+      <div className="container navbar ">
         <Link to="/" className="logo">
           F<span>oo</span>diesHub
         </Link>
+
         <div className="nav-links">
           {links.map((link) => (
             <Link
@@ -45,6 +43,20 @@ export default function Navbar() {
               {link.name}
             </Link>
           ))}
+        </div>
+        <div
+          onClick={() => setShowSettings(!showSettings)}
+          className="settings-btn">
+          <FontAwesomeIcon icon={faCog} />
+          <span> </span>
+          SETTINGS
+          <div
+            style={
+              showSettings ? { display: "inline-block" } : { display: "none" }
+            }
+            className="drop-down">
+            <Settings />
+          </div>
         </div>
         <div
           onClick={() => setShowSitebar(!showSidebar)}

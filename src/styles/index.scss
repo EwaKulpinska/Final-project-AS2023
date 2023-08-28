@@ -51,6 +51,23 @@ img {
   }
 }
 
+.settings-btn {
+  margin-left: 1em;
+  color: var(--text-light);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  font-size: 0.9em;
+  .drop-down {
+    position: absolute;
+    display: inline-block;
+    margin-top: 1em;
+    left: -140%;
+    height: 2em;
+    width: 16.5em;
+  }
+}
+
 .custom-image {
   height: 0;
   width: 100%;
@@ -109,32 +126,16 @@ img {
   display: flex;
   gap: 1em;
   .option {
-    height: 3.5em;
-    width: 3.5em;
+    min-height: 2em;
+    min-width: 2em;
     box-shadow: 0 3px 6px var(--shadow-color);
     border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
-    &.light {
-      background-color: #fff;
-    }
-    &.dark {
-      background-color: rgb(29, 29, 29);
-    }
-    .check {
-      height: 2.5em;
-      width: 2.5em;
-      background-color: var(--primary-color);
+    &:hover {
       border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 0 2px 5px var(--shadow-color);
-      svg {
-        height: 1.5em;
-        width: 1.5em;
-      }
+      box-shadow: 0 10px 10px var(--shadow-color);
     }
   }
   .btn span {
