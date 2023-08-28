@@ -25,7 +25,7 @@ export default function Sidebar({ links, close }) {
         ))}
         <div
           onClick={() => setShowSettings(!showSettings)}
-          className="settings-btn-sidebar">
+          className="settings-btn-sidebar sidebar-link">
           <FontAwesomeIcon icon={faCog} />
           <span> </span>
           SETTINGS

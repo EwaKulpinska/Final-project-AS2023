@@ -21,6 +21,16 @@ export default function Navbar() {
       path: "/recipes",
       icon: faList,
     },
+    {
+      name: "Favourites",
+      path: "/favourites",
+      icon: faList,
+    },
+    {
+      name: "About Us",
+      path: "/about",
+      icon: faList,
+    },
   ];
 
   function closeSidebar() {
