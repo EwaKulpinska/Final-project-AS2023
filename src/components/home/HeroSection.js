@@ -1,10 +1,8 @@
 import CustomImage from "./CustomImage";
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
 
 export default function HeroSection() {
   const [random, setRandom] = useState([]);
-  const navigate = useNavigate();
 
   useEffect(() => {
     getRandom();
@@ -16,7 +14,7 @@ export default function HeroSection() {
       setRandom(JSON.parse(check));
     } else {
       const api = await fetch(
-        `https://api.spoonacular.com/recipes/random?apiKey=8245514d741c4cad964c29318b140e2c&number=9`
+        `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9`
       );
       const data = await api.json();
 

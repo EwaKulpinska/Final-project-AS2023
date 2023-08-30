@@ -17,7 +17,7 @@ export default function ChefsSection() {
       setPopular(JSON.parse(check));
     } else {
       const api = await fetch(
-        `https://api.spoonacular.com/recipes/random?apiKey=8245514d741c4cad964c29318b140e2c&number=9&tags=dessert`
+        `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9&tags=dessert`
       );
       const data = await api.json();
 

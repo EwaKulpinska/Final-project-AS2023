@@ -1,7 +1,7 @@
-import HeroSection from "../components/HeroSection";
-import ImproveSkills from "../components/ImproveSkills";
-import QuoteSection from "../components/QuoteSection";
-import ChefsSection from "../components/ChefsSection";
+import HeroSection from "../components/home/HeroSection";
+import ImproveSkills from "../components/home/ImproveSkills";
+import QuoteSection from "../components/home/QuoteSection";
+import Carousel from "../components/home/Carousel";
 
 export default function Home() {
   return (
@@ -9,7 +9,7 @@ export default function Home() {
       <HeroSection />
       <ImproveSkills />
       <QuoteSection />
-      <ChefsSection />
+      <Carousel />
     </div>
   );
 }
