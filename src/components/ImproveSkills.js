@@ -1,6 +1,9 @@
 import { img10 } from "../img/images";
 
 export default function ImproveSkills() {
+  const check = localStorage.getItem("random");
+  const recipes = JSON.parse(check);
+
   const list = [
     "Learn new recipes",
     "Experiment with food",
@@ -13,7 +16,7 @@ export default function ImproveSkills() {
   return (
     <div className="section improve-skills">
       <div className="col img">
-        <img src={img10} alt="Sushi" />
+        <img src={recipes ? recipes[5].image : img10} alt="Sushi" />
       </div>
       <div className="col typography">
         <h1 className="title">Improve Your Culinary Skills</h1>

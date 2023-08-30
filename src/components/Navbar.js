@@ -41,7 +41,7 @@ export default function Navbar() {
     <>
       <div className="container navbar ">
         <Link to="/" className="logo">
-          F<span>oo</span>diesHub
+          F<span>oo</span>dlum<span>!</span>
         </Link>
 
         <div className="nav-links">
