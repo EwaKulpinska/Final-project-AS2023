@@ -1,8 +1,26 @@
-import { img10 } from "../../img/images";
+import { useState, useEffect } from "react";
 
 export default function ImproveSkills() {
-  const check = localStorage.getItem("random");
-  const recipes = JSON.parse(check);
+  const [headerDish, setHeaderDish] = useState([]);
+
+  useEffect(() => {
+    getHeaderImage();
+  }, []);
+
+  const getHeaderImage = async () => {
+    const check = localStorage.getItem("headerDish");
+    if (check) {
+      setHeaderDish(JSON.parse(check));
+    } else {
+      const api = await fetch(
+        `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=1`
+      );
+      const data = await api.json();
+
+      localStorage.setItem("headerDish", JSON.stringify(data.recipes));
+      setHeaderDish(data.recipes);
+    }
+  };
 
   const list = [
     "Learn new recipes",
@@ -16,7 +34,9 @@ export default function ImproveSkills() {
   return (
     <div className="section improve-skills">
       <div className="col img">
-        <img src={recipes ? recipes[5].image : img10} alt="Sushi" />
+        {headerDish.map((dish) => (
+          <img src={dish.image} alt="Sushi" />
+        ))}
       </div>
       <div className="col typography">
         <h1 className="title">Improve Your Culinary Skills</h1>

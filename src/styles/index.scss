@@ -2,7 +2,7 @@
   --background-color: #fff;
   --background-light: #fff;
   --shadow-color: rgba(0, 0, 0, 0.2);
-  --primary-color: rgb(255, 0, 86);
+  --primary-color: rgba(232, 67, 147, 1);
   --text-color: #0a0a0a;
   --text-light: #575757;
   --font-size: 16px;
@@ -37,7 +37,7 @@ img {
 .btn {
   border: none;
   outline: none;
-  background-color: var(--primary-color);
+  background: linear-gradient(35deg, #34495e, var(--primary-color));
   color: #fff;
   padding: 0.75em 1em;
   text-transform: uppercase;
@@ -96,7 +96,6 @@ img {
 @import "partials/quote-section";
 @import "partials/chefs-section";
 @import "partials/footer";
-@import "partials/precious-searches";
 @import "partials/recipes-section";
 
 .options-container {

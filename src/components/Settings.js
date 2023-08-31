@@ -21,11 +21,11 @@ export default function Settings() {
   }
 
   const primaryColors = [
-    "rgb(255, 0, 86)",
+    "rgba(232, 67, 147,1.0)",
     "rgb(33, 150, 243)",
-    "rgb(255, 193, 7)",
-    "rgb(0, 200, 83)",
-    "rgb(156, 39, 176)",
+    "rgba(250, 152, 58,1.0)",
+    "rgba(22, 160, 133,1.0)",
+    "rgba(155, 89, 182,1.0)",
   ];
 
   return (

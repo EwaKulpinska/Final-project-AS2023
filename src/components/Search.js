@@ -27,15 +27,18 @@ function Search() {
 }
 
 const FormStyle = styled.form`
-  margin: 0rem 20rem;
+  margin: 0rem 10rem;
   div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
-    width: 100%;
+    min-width: 30vw;
   }
   input {
     border: none;
-    background: linear-gradient(35deg, #494949, #313131);
-    font-size: 1.5rem;
+    background: linear-gradient(35deg, #34495e 40%, var(--primary-color));
+    font-size: 1.2rem;
     color: white;
     padding: 1rem 3rem;
     border: none;
