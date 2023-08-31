@@ -1,8 +1,14 @@
 import CustomImage from "./CustomImage";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function HeroSection() {
   const [random, setRandom] = useState([]);
+  const navigate = useNavigate();
+
+  const clickHandler = () => {
+    navigate("/recipes/");
+  };
 
   useEffect(() => {
     getRandom();
@@ -32,7 +38,9 @@ export default function HeroSection() {
           delicious food recipies of all cuisine. And our service is absolutely
           free. So start exploring now.
         </p>
-        <button className="btn">explore now</button>
+        <button onClick={clickHandler} className="btn">
+          explore now
+        </button>
       </div>
       <div className="col gallery">
         {random.map((recipe) => (

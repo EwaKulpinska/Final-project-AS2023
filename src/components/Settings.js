@@ -23,7 +23,7 @@ export default function Settings() {
   const primaryColors = [
     "rgba(232, 67, 147,1.0)",
     "rgb(33, 150, 243)",
-    "rgba(250, 152, 58,1.0)",
+    "rgb(249, 123, 34)",
     "rgba(22, 160, 133,1.0)",
     "rgba(155, 89, 182,1.0)",
   ];

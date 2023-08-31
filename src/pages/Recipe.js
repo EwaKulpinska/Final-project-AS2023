@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { useParams } from "react-router-dom";
+import Search from "../components/Search";
+import Category from "../components/Category";
 import React from "react";
 
 function Recipe() {
@@ -25,50 +27,63 @@ function Recipe() {
   console.log(ingredients);
 
   return (
-    <DetailWrapper>
-      <div>
-        <h2>{details.title}</h2>
-        <img src={details.image} alt="" />
-      </div>
-      <Info>
-        <Button
-          className={activeTab === "instructions" ? "active" : ""}
-          onClick={() => setActiveTab("instructions")}>
-          Instructions
-        </Button>
-        <Button
-          className={activeTab === "ingredients" ? "active" : ""}
-          onClick={() => setActiveTab("ingredients")}>
-          Ingredients
-        </Button>
-        {activeTab === "instructions" && (
-          <div>
-            <h3 dangerouslySetInnerHTML={{ __html: details.summary }}></h3>
-            <h3 dangerouslySetInnerHTML={{ __html: details.instructions }}></h3>
-          </div>
-        )}
-        {activeTab === "ingredients" && (
-          <ul>
-            {ingredients.map((ingredient) => (
-              <li key={ingredient.id}>{ingredient.original}</li>
-            ))}
-          </ul>
-        )}
-      </Info>
-    </DetailWrapper>
+    <>
+      <Search />
+      <Category />
+      <DetailWrapper>
+        <div>
+          <h2>{details.title}</h2>
+          <img src={details.image} alt="" />
+        </div>
+        <Info>
+          <Button
+            className={activeTab === "instructions" ? "active" : ""}
+            onClick={() => setActiveTab("instructions")}>
+            Instructions
+          </Button>
+          <Button
+            className={activeTab === "ingredients" ? "active" : ""}
+            onClick={() => setActiveTab("ingredients")}>
+            Ingredients
+          </Button>
+          {activeTab === "instructions" && (
+            <div>
+              <p dangerouslySetInnerHTML={{ __html: details.summary }}></p>
+              <p dangerouslySetInnerHTML={{ __html: details.instructions }}></p>
+            </div>
+          )}
+          {activeTab === "ingredients" && (
+            <ul>
+              {ingredients.map((ingredient) => (
+                <li key={ingredient.id}>{ingredient.original}</li>
+              ))}
+            </ul>
+          )}
+        </Info>
+      </DetailWrapper>
+    </>
   );
 }
 
 const DetailWrapper = styled.div`
-  margin-top: 10rem;
+  margin-top: 5rem;
   margin-bottom: 5rem;
   display: flex;
   .active {
-    background: linear-gradient(35deg, #494949, #313131);
+    background: linear-gradient(35deg, #34495e, var(--primary-color));
     color: white;
   }
   h2 {
     margin-bottom: 2rem;
+  }
+  p {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+  }
+  img {
+    width: 23rem;
+    border-radius: 2rem;
   }
   li {
     font-size: 1.2rem;
@@ -89,7 +104,7 @@ const Button = styled.button`
 `;
 
 const Info = styled.div`
-  margin-left: 10rem;
+  margin-left: 2.5rem;
 `;
 
 export default Recipe;
