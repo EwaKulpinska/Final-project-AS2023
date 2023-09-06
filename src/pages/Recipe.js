@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import Search from "../components/Search";
 import Category from "../components/Category";
 import React from "react";
+import { motion } from "framer-motion";
 
 function Recipe() {
   const params = useParams();
@@ -21,13 +22,18 @@ function Recipe() {
 
   useEffect(() => {
     fetchDetails();
+    console.log([details]);
   }, [params.name]);
 
   const ingredients = details.extendedIngredients;
   console.log(ingredients);
 
   return (
-    <>
+    <motion.div
+      animate={{ opacity: 1 }}
+      initial={{ opacity: 0 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.7 }}>
       <Search />
       <Category />
       <DetailWrapper>
@@ -61,7 +67,7 @@ function Recipe() {
           )}
         </Info>
       </DetailWrapper>
-    </>
+    </motion.div>
   );
 }
 

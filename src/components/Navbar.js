@@ -22,8 +22,8 @@ export default function Navbar() {
       icon: faList,
     },
     {
-      name: "Favourites",
-      path: "/favourites",
+      name: "Subscriptions",
+      path: "/subscriptions",
       icon: faList,
     },
     {

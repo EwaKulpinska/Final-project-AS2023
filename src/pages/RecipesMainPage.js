@@ -4,6 +4,7 @@ import Search from "../components/Search";
 import RecipePages from "./RecipePages";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 export default function RecipesMainPage() {
   const [startingRecipes, setStartingRecipes] = useState([]);
@@ -28,7 +29,11 @@ export default function RecipesMainPage() {
   };
 
   return (
-    <div>
+    <motion.div
+      animate={{ opacity: 1 }}
+      initial={{ opacity: 0 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.7 }}>
       <Search />
       <Category />
       <Grid>
@@ -44,11 +49,11 @@ export default function RecipesMainPage() {
         })}
       </Grid>
       <RecipePages />
-    </div>
+    </motion.div>
   );
 }
 
-const Grid = styled.div`
+const Grid = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   grid-gap: 3rem;

@@ -22,17 +22,22 @@ function Cuisine() {
   }, [params.type]);
 
   return (
-    <>
+    <motion.div
+      animate={{ opacity: 1 }}
+      initial={{ opacity: 0 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.7 }}>
       <Search />
       <Category />
-      <Grid
-        animate={{ opacity: 1 }}
-        initial={{ opacity: 0 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.5 }}>
+      <Grid>
         {cuisine.map((item) => {
           return (
-            <Card key={item.id}>
+            <Card
+              key={item.id}
+              animate={{ opacity: 1 }}
+              initial={{ opacity: 0 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.7 }}>
               <Link to={"/recipe/" + item.id}>
                 <img src={item.image} alt={item.title} />
                 <h4>{item.title}</h4>
@@ -41,7 +46,7 @@ function Cuisine() {
           );
         })}
       </Grid>
-    </>
+    </motion.div>
   );
 }
 
@@ -51,7 +56,7 @@ const Grid = styled(motion.div)`
   grid-gap: 3rem;
 `;
 
-const Card = styled.div`
+const Card = styled(motion.div)`
   img {
     width: 100%;
     border-radius: 2rem;
