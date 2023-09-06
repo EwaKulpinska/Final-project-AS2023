@@ -1,0 +1,40 @@
+.detail-wrapper {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  display: flex;
+
+  h2 {
+    margin-bottom: 2rem;
+  }
+  p {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+  }
+  img {
+    width: 23rem;
+    border-radius: 2rem;
+  }
+  li {
+    font-size: 1.2rem;
+    line-height: 2.5rem;
+  }
+  ul {
+    margin-top: 2rem;
+  }
+  .recipe-info {
+    margin-left: 2.5rem;
+    button.recipe-button {
+      padding: 1rem 2rem;
+      color: #313131;
+      background: white;
+      border: 2px solid black;
+      margin-right: 2rem;
+      font-weight: 600;
+      &.active {
+        background: linear-gradient(35deg, #34495e, var(--primary-color));
+        color: white;
+      }
+    }
+  }
+}

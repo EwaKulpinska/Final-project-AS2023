@@ -3,7 +3,6 @@ import Category from "../components/Category";
 import Search from "../components/Search";
 import RecipePages from "./RecipePages";
 import { Link } from "react-router-dom";
-import styled from "styled-components";
 import { motion } from "framer-motion";
 
 export default function RecipesMainPage() {
@@ -36,39 +35,19 @@ export default function RecipesMainPage() {
       transition={{ duration: 0.7 }}>
       <Search />
       <Category />
-      <Grid>
+      <motion.div className="recipes-container">
         {startingRecipes.map((item) => {
           return (
-            <Card key={item.id}>
-              <Link to={"/recipe/" + item.id}>
+            <motion.div className="recipe-card" key={item.id}>
+              <Link to={"/recipe/" + item.id} className="recipe-link">
                 <img src={item.image} alt="" />
                 <h4>{item.title}</h4>
               </Link>
-            </Card>
+            </motion.div>
           );
         })}
-      </Grid>
+      </motion.div>
       <RecipePages />
     </motion.div>
   );
 }
-
-const Grid = styled(motion.div)`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-  grid-gap: 3rem;
-`;
-
-const Card = styled.div`
-  img {
-    width: 100%;
-    border-radius: 2rem;
-  }
-  a {
-    text-decoration: none;
-  }
-  h4 {
-    text-align: center;
-    padding: 1rem;
-  }
-`;

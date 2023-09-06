@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Search from "../components/Search";
 import Category from "../components/Category";
@@ -23,22 +24,32 @@ function Searched() {
   }, [params.search]);
 
   return (
-    <>
+    <motion.div
+      animate={{ opacity: 1 }}
+      initial={{ opacity: 0 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.7 }}>
       <Search />
       <Category />
-      <Grid>
+      <div className="recipes-container">
         {searchedRecipes.map((item) => {
           return (
-            <Card key={item.id}>
-              <Link to={"/recipe/" + item.id}>
+            <motion.div
+              className="recipe-card"
+              key={item.id}
+              animate={{ opacity: 1 }}
+              initial={{ opacity: 0 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.7 }}>
+              <Link to={"/recipe/" + item.id} className="recipe-link">
                 <img src={item.image} alt="" />
                 <h4>{item.title}</h4>
               </Link>
-            </Card>
+            </motion.div>
           );
         })}
-      </Grid>
-    </>
+      </div>
+    </motion.div>
   );
 }
 
@@ -48,7 +59,7 @@ const Grid = styled.div`
   grid-gap: 3rem;
 `;
 
-const Card = styled.div`
+const Card = styled(motion.div)`
   img {
     width: 100%;
     border-radius: 2rem;
