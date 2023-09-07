@@ -22,8 +22,8 @@ export default function Navbar() {
       icon: faList,
     },
     {
-      name: "Subscriptions",
-      path: "/subscriptions",
+      name: "Meal Plans",
+      path: "/mealplan",
       icon: faList,
     },
     {

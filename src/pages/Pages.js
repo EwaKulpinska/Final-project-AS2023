@@ -5,7 +5,7 @@ import Recipe from "./Recipe";
 import Searched from "../components/Searched";
 import { Route, Routes } from "react-router-dom";
 import RecipesMainPage from "./RecipesMainPage";
-import Subscriptions from "./Subscriptions";
+import MealPlans from "./MealPlans";
 import About from "./About";
 import { AnimatePresence } from "framer-motion";
 
@@ -14,7 +14,7 @@ function Pages() {
     <AnimatePresence mode="wait">
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/subscriptions" element={<Subscriptions />} />
+        <Route path="/mealplan" element={<MealPlans />} />
         <Route path="/about" element={<About />} />
         <Route path="/recipes/cuisine/:type" element={<Cuisine />} />
         <Route path="/recipes/searched/:search" element={<Searched />} />
