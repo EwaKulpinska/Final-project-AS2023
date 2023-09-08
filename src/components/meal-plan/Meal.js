@@ -19,9 +19,9 @@ export default function Meal({ meal }) {
 
   return (
     <article>
-      <h1>{meal.title}</h1>
+      <h1 className="meal-plan-header">{meal.title}</h1>
       <Link to={"/recipe/" + meal.id} className="recipe-link">
-        <img src={imageUrl} alt="recipe" />
+        <img src={imageUrl} alt="recipe" className="meal-image" />
       </Link>
       <ul className="instructions">
         <li>Preparation time: {meal.readyInMinutes} minutes</li>

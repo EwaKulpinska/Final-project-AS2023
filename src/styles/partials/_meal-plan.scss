@@ -4,17 +4,14 @@
   flex-direction: column;
 }
 
-section {
-  margin: 2rem 0 1rem 0;
-}
-
 .controls {
+  margin: 2rem 0 1rem 0;
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
-input {
+.meal-plan-calories {
   text-align: center;
   padding: 0.5rem;
   margin-bottom: 1rem;
@@ -38,18 +35,19 @@ input {
   }
 }
 
-main {
+.meal-plan-main {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-h1 {
+.meal-plan-header {
   text-align: center;
   margin-bottom: 2rem;
 }
 
 .nutrients ul {
+  margin: 2rem 0 1rem 0;
   display: flex;
   width: 35rem;
   justify-content: space-evenly;
@@ -59,7 +57,7 @@ h1 {
   display: flex;
 }
 
-img {
+.meal-image {
   width: 100%;
   margin-bottom: 1rem;
   border-radius: 1.5rem;
@@ -74,10 +72,6 @@ article {
   box-shadow: 0 4px 8px 2px rgba(77, 77, 77, 0.15);
 }
 
-ul {
-  list-style: none;
-}
-
 .instructions {
   font-size: 0.9rem;
   margin-bottom: 1rem;
@@ -89,7 +83,7 @@ ul {
     align-items: center;
   }
 
-  .nutrients ul {
+  .nutrients-list {
     display: flex;
     flex-direction: column;
     align-items: center;

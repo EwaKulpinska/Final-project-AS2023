@@ -4,6 +4,7 @@ import Search from "../components/Search";
 import Category from "../components/Category";
 import React from "react";
 import { motion } from "framer-motion";
+import BackButton from "../components/BackButton";
 
 function Recipe() {
   const params = useParams();
@@ -16,12 +17,10 @@ function Recipe() {
     );
     const detailData = await data.json();
     setDetails(detailData);
-    console.log(detailData);
   };
 
   useEffect(() => {
     fetchDetails();
-    console.log([details]);
   }, [params.name]);
 
   const ingredients = details.extendedIngredients;
@@ -39,6 +38,7 @@ function Recipe() {
         <div>
           <h2>{details.title}</h2>
           <img src={details.image} alt="" />
+          <BackButton />
         </div>
         <div className="recipe-info">
           <button

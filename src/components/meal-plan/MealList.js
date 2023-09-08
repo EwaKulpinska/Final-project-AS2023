@@ -4,9 +4,9 @@ export default function MealList({ mealData }) {
   const nutrients = mealData.nutrients;
 
   return (
-    <main>
+    <main className="meal-plan-main">
       <section className="nutrients">
-        <h1 className="meal-header">Macros</h1>
+        <h1 className="meal-plan-header">Macros</h1>
         <ul className="nutrients-list">
           <li>Calories: {nutrients.calories.toFixed(0)}</li>
           <li>Carbohydrates: {nutrients.carbohydrates.toFixed(0)}</li>

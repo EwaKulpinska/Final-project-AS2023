@@ -1,23 +1,30 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import MealList from "../components/meal-plan/MealList";
 
-function Subscriptions() {
+function MealPlan() {
   const [mealData, setMealData] = useState(null);
   const [calories, setCalories] = useState(2000);
 
-  function getMealData() {
-    fetch(
-      `https://api.spoonacular.com/mealplanner/generate?apiKey=${process.env.REACT_APP_API_KEY}&timeFrame=day&targetCalories=${calories}`
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        setMealData(data);
-      })
-      .catch(() => {
-        console.log("error");
-      });
+  useEffect(() => {
+    getPreviousPlan();
+  }, []);
+
+  function getPreviousPlan() {
+    const prevPlan = localStorage.getItem("meal-plan");
+    if (prevPlan) {
+      setMealData(JSON.parse(prevPlan));
+    }
   }
+
+  const getMealData = async () => {
+    const data = await fetch(
+      `https://api.spoonacular.com/mealplanner/generate?apiKey=${process.env.REACT_APP_API_KEY}&timeFrame=day&targetCalories=${calories}`
+    );
+    const dataDetails = await data.json();
+    setMealData(dataDetails);
+    localStorage.setItem("meal-plan", JSON.stringify(dataDetails));
+  };
 
   function handleChange(e) {
     setCalories(e.target.value);
@@ -32,6 +39,7 @@ function Subscriptions() {
       className="meal-plan">
       <section className="controls">
         <input
+          className="meal-plan-calories"
           type="number"
           placeholder="Calories (e.g. 2000)"
           onChange={handleChange}
@@ -45,4 +53,4 @@ function Subscriptions() {
   );
 }
 
-export default Subscriptions;
+export default MealPlan;
