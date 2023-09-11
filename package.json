@@ -1,5 +1,5 @@
 {
-  "homepage": "https://EwaKulpinska.github.io/final-project-as2023",
+  "homepage": "./home",
   "name": "final-project-as2023",
   "version": "0.1.0",
   "private": true,
@@ -19,7 +19,6 @@
     "react-router-dom": "^6.15.0",
     "react-scripts": "5.0.1",
     "sass": "^1.66.1",
-    "styled-components": "^6.0.7",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

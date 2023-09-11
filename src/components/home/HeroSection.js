@@ -6,7 +6,7 @@ export default function HeroSection() {
   const [random, setRandom] = useState([]);
   const navigate = useNavigate();
 
-  const clickHandler = () => {
+  const exploreClickHandler = () => {
     navigate("/recipes/");
   };
 
@@ -38,7 +38,7 @@ export default function HeroSection() {
           delicious food recipies of all cuisine. And our service is absolutely
           free. So start exploring now.
         </p>
-        <button onClick={clickHandler} className="btn">
+        <button onClick={exploreClickHandler} className="btn">
           explore now
         </button>
       </div>

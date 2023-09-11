@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import Category from "../components/Category";
 import Search from "../components/Search";
-import RecipePages from "./RecipePages";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -47,7 +46,6 @@ export default function RecipesMainPage() {
           );
         })}
       </motion.div>
-      <RecipePages />
     </motion.div>
   );
 }

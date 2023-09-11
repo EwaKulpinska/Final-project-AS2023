@@ -1,7 +1,13 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function ImproveSkills() {
   const [headerDish, setHeaderDish] = useState([]);
+  const navigate = useNavigate();
+
+  const signupClickHandler = () => {
+    navigate("/about");
+  };
 
   useEffect(() => {
     getHeaderImage();
@@ -45,7 +51,9 @@ export default function ImproveSkills() {
             {item}
           </p>
         ))}
-        <button className="btn">signup now</button>
+        <button className="btn" onClick={signupClickHandler}>
+          signup now
+        </button>
       </div>
     </div>
   );

@@ -13,7 +13,7 @@ function Pages() {
   return (
     <AnimatePresence mode="wait">
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/mealplan" element={<MealPlans />} />
         <Route path="/about" element={<About />} />
         <Route path="/recipes/cuisine/:type" element={<Cuisine />} />
