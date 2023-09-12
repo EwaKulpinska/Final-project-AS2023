@@ -1,0 +1,22 @@
+.recipes-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  grid-gap: 3rem;
+}
+
+.recipe-card {
+  img {
+    width: 100%;
+    border-radius: 2rem;
+  }
+  h4 {
+    text-align: center;
+    padding: 1rem;
+  }
+}
+.recipe-link {
+  &:link,
+  &:visited {
+    color: var(--text-color);
+  }
+}
