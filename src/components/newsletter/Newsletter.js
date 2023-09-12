@@ -42,7 +42,7 @@ function Newsletter() {
           E-mail
         </label>
         {!validEmail && email !== "" && (
-          <p className="warning">Valid email required</p>
+          <p className="warning">Valid email required!</p>
         )}
         <input
           onChange={handleEmailChange}
