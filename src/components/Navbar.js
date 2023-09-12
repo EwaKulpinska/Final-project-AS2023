@@ -3,7 +3,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import Sidebar from "./Sidebar";
 import Settings from "./Settings";
-import { faHome, faList, faCog } from "@fortawesome/free-solid-svg-icons";
+import {
+  faHome,
+  faList,
+  faCog,
+  faUtensils,
+  faAddressCard,
+} from "@fortawesome/free-solid-svg-icons";
 
 export default function Navbar() {
   const location = useLocation();
@@ -24,12 +30,12 @@ export default function Navbar() {
     {
       name: "Meal Plans",
       path: "/mealplan",
-      icon: faList,
+      icon: faUtensils,
     },
     {
       name: "About Us",
       path: "/about",
-      icon: faList,
+      icon: faAddressCard,
     },
   ];
 
