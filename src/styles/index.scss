@@ -100,13 +100,15 @@ ul {
 @import "partials/hero-section";
 @import "partials/improve-section";
 @import "partials/quote-section";
-@import "partials/chefs-section";
+@import "partials/carousel-section";
 @import "partials/footer";
 @import "partials/recipes-section";
 @import "partials/recipe";
 @import "partials/meal-plan";
 @import "partials/about";
 @import "partials/newsletter-modal";
+@import "partials/category";
+@import "partials/search";
 
 .options-container {
   box-shadow: 0 5px 10px var(--shadow-color);
