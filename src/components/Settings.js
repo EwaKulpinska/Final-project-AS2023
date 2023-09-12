@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 export default function Settings() {
   const [settings, setSettings] = useState();
-  const [primaryColor, setPrimaryColor] = useState(0);
+  const [, setPrimaryColor] = useState(0);
 
   useEffect(() => {
     const root = document.documentElement;

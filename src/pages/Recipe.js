@@ -21,6 +21,7 @@ function Recipe() {
 
   useEffect(() => {
     fetchDetails();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [params.name]);
 
   const ingredients = details.extendedIngredients;
