@@ -36,7 +36,7 @@ function Recipe() {
       <Search />
       <Category />
       <div className="detail-wrapper">
-        <div>
+        <div className="recipe-header">
           <h2>{details.title}</h2>
           <img src={details.image} alt="" />
           <BackButton />

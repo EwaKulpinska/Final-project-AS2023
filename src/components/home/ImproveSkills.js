@@ -31,10 +31,10 @@ export default function ImproveSkills() {
   const list = [
     "Learn new recipes",
     "Experiment with food",
-    "Write your own resipes",
+    "Discover local cuisines",
     "Know nutrition facts",
     "Get cooking tips",
-    "Get ranked",
+    "Get inspired",
   ];
 
   return (
