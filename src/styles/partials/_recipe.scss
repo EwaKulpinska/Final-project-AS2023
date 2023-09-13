@@ -1,7 +1,7 @@
 .detail-wrapper {
-  margin-top: 5rem;
   margin-bottom: 5rem;
   display: flex;
+  padding: 2rem;
 
   h2 {
     margin-bottom: 2rem;
@@ -12,7 +12,7 @@
     line-height: 1.5rem;
   }
   img {
-    width: 23rem;
+    width: 100%;
     border-radius: 2rem;
   }
   li {
@@ -25,6 +25,7 @@
   }
 
   .back-btn {
+    margin: 1rem 1rem 0;
     border-radius: 0.3rem;
     width: 20%;
     padding: 0.5rem 1rem;
@@ -40,8 +41,15 @@
     }
   }
 
+  .recipe-header {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+  }
+
   .recipe-info {
     margin-left: 2.5rem;
+    width: 60%;
     button.recipe-button {
       padding: 1rem 2rem;
       color: #313131;

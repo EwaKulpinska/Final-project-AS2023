@@ -10,11 +10,11 @@ function Category() {
         <NavLink to={"/recipes/cuisine/American"} className="category-link">
           <h4>American</h4>
         </NavLink>
-        <NavLink to={"/recipes/cuisine/Thai"} className="category-link">
-          <h4>Thai</h4>
+        <NavLink to={"/recipes/cuisine/Greek"} className="category-link">
+          <h4>Greek</h4>
         </NavLink>
-        <NavLink to={"/recipes/cuisine/Japanese"} className="category-link">
-          <h4>Japanese</h4>
+        <NavLink to={"/recipes/cuisine/Mexican"} className="category-link">
+          <h4>Mexican</h4>
         </NavLink>
       </div>
     </>
