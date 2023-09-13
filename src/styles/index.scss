@@ -1,5 +1,5 @@
 :root {
-  --background-color: #fff;
+  --background-color: #f6f0ee;
   --background-light: #fff;
   --shadow-color: rgba(0, 0, 0, 0.2);
   --primary-color: rgba(232, 67, 147, 1);
@@ -23,7 +23,7 @@ body {
   font-size: var(--font-size);
   font-family: "Roboto", sans-serif;
   padding-top: 55px;
-  background-color: var(--background-light);
+  background-color: var(--background-color);
 }
 
 a {
