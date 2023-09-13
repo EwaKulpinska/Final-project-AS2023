@@ -27,13 +27,15 @@
   .back-btn {
     margin: 1rem 1rem 0;
     border-radius: 0.3rem;
-    width: 20%;
+    text-align: center;
+    justify-content: center;
+    max-width: 40%;
     padding: 0.5rem 1rem;
     background: linear-gradient(35deg, #34495e, var(--primary-color));
     color: #f3f3f3;
     border: none;
     font-family: "Roboto", sans-serif;
-    font-size: 1rem;
+    font-size: clamp(0.5rem, 2vw, 1rem);
     cursor: pointer;
     &:hover {
       box-shadow: 6px 6px 10px var(--shadow-color);
