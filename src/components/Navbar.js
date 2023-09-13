@@ -46,7 +46,7 @@ export default function Navbar() {
   return (
     <>
       <div className="container navbar ">
-        <Link to="/home" className="logo">
+        <Link to="/" className="logo">
           F<span>oo</span>dlum<span>!</span>
         </Link>
 
